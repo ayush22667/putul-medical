@@ -1,0 +1,53 @@
+<!-- Front-end only: wire to a real auth provider before enabling features.signin. -->
+<div class="sheet-backdrop" data-sheet="signin">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Sign in">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <button type="button" class="sheet-close" data-close aria-label="Close"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-close" /></svg></button>
+
+    <div class="tabs" id="signinTabs">
+      <button type="button" class="active" data-mode="signin" data-i18n="tab_signin">Sign In</button>
+      <button type="button" data-mode="create" data-i18n="tab_create">Create Account</button>
+    </div>
+
+    <div class="step-view active" data-step="phone">
+      <h2 class="sheet-title" id="signinTitle" data-i18n="welcome_back">Welcome back</h2>
+      <p class="sub" id="signinSub" data-i18n="signin_sub">Sign in to track orders, save prescriptions, and reorder faster.</p>
+      <form id="phoneForm">
+        <div class="field" id="nameField" hidden>
+          <label for="signinName" data-i18n="full_name_label">Full Name</label>
+          <input class="field-input" type="text" id="signinName" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="signinPhone" data-i18n="mobile_label">Mobile Number</label>
+          <input class="field-input" type="tel" id="signinPhone" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="send_otp">Send OTP</button>
+      </form>
+      <p class="guest"><span data-i18n="just_browsing">Just browsing?</span> <button type="button" class="link-btn" data-close data-i18n="continue_guest">Continue as Guest</button></p>
+    </div>
+
+    <div class="step-view" data-step="otp">
+      <h2 class="sheet-title" data-i18n="enter_otp">Enter OTP</h2>
+      <p class="sub" id="otpSentTo"></p>
+      <form id="otpForm">
+        <div class="field otp">
+          <input type="text" inputmode="numeric" autocomplete="one-time-code" aria-label="Digit 1" />
+          <input type="text" maxlength="1" inputmode="numeric" aria-label="Digit 2" />
+          <input type="text" maxlength="1" inputmode="numeric" aria-label="Digit 3" />
+          <input type="text" maxlength="1" inputmode="numeric" aria-label="Digit 4" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="otpSubmit" data-i18n="verify_signin">Verify &amp; Sign In</button>
+      </form>
+      <p class="guest"><button type="button" class="link-btn" id="otpBack" data-i18n="change_number">Change number</button></p>
+    </div>
+
+    <div class="step-view" data-step="done">
+      <div class="success">
+        <div class="check"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div>
+        <h2 id="doneTitle"></h2>
+        <p class="sub" id="doneSub"></p>
+        <button type="button" class="btn btn-primary btn-block" data-close data-i18n="continue_btn">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>

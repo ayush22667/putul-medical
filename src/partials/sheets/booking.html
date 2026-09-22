@@ -1,0 +1,35 @@
+<div class="sheet-backdrop" data-sheet="booking">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Book a consultation">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <button type="button" class="sheet-close" data-close aria-label="Close"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-close" /></svg></button>
+
+    <div class="step-view active" data-step="form">
+      <h2 class="sheet-title" data-i18n="doc_book_h">Book your appointment</h2>
+      <div class="preview-row">
+        <div class="avatar" id="bkAvatar" aria-hidden="true">👨‍⚕️</div>
+        <div><b id="bkDoctor"></b><small id="bkSpec"></small></div>
+      </div>
+      <form id="bookingForm" name="doctor-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="doctor-booking" />
+        <input type="hidden" name="doctor" id="bkDoctorField" />
+        <input type="hidden" name="code" id="bkCodeField" />
+        <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="field"><label for="bkName" data-i18n="full_name_label">Full Name</label><input class="field-input" type="text" id="bkName" name="name" autocomplete="name" required /></div>
+        <div class="field"><label for="bkPhone" data-i18n="mobile_label">Mobile Number</label><input class="field-input" type="tel" id="bkPhone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" minlength="10" maxlength="16" required /></div>
+        <div class="field"><label for="bkTime" data-i18n="doc_preferred_time">Preferred Time</label><input class="field-input" type="datetime-local" id="bkTime" name="preferred_time" required /></div>
+        <button type="submit" class="btn btn-primary btn-block" data-i18n="doc_confirm_btn">Confirm Appointment</button>
+      </form>
+    </div>
+
+    <div class="step-view" data-step="done">
+      <div class="success">
+        <div class="check"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div>
+        <h2 class="result-title" data-i18n="doc_confirmed_h">Request received</h2>
+        <p class="sub result-sub" data-i18n="doc_confirmed_sub">We'll send a confirmation on WhatsApp shortly. Show this at your consultation for your discount.</p>
+        <div class="promo-code" id="bkCode">DOC10</div>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-wa btn-block result-wa" id="bkWa"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-wa" /></svg><span class="result-wa-label" data-i18n="wa_faster">Get a faster reply on WhatsApp</span></a>
+        <button type="button" class="btn btn-ghost btn-block" data-close data-i18n="continue_btn">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>

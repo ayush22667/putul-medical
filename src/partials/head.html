@@ -1,0 +1,45 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#152A1D" />
+<meta name="description" content="{{description}}" />
+<meta name="format-detection" content="telephone=no" />
+<link rel="canonical" href="{{url}}/" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="manifest" href="/manifest.webmanifest" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="{{name}}" />
+<meta property="og:title" content="{{name}} — Trusted Since {{since}}" />
+<meta property="og:description" content="{{description}}" />
+<meta property="og:url" content="{{url}}/" />
+<meta property="og:locale" content="en_IN" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta name="twitter:card" content="summary" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap"
+/>
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Pharmacy",
+    "name": "{{name}}",
+    "url": "{{url}}/",
+    "telephone": "{{phoneE164}}",
+    "foundingDate": "{{since}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Binodpur",
+      "addressLocality": "{{addressLocality}}",
+      "addressRegion": "{{addressRegion}}",
+      "postalCode": "{{postalCode}}",
+      "addressCountry": "IN"
+    },
+    "openingHours": "Mo-Su 09:00-22:00",
+    "areaServed": ["Katihar", "Purnea"]
+  }
+</script>

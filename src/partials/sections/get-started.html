@@ -1,0 +1,96 @@
+<section class="block" id="upload">
+  <div class="wrap">
+    <div class="section-head" data-reveal>
+      <div class="eyebrow" data-i18n="get_eyebrow">Get Started</div>
+      <h2 data-i18n="get_heading">Upload a prescription or track an order.</h2>
+    </div>
+
+    <div class="seg" role="tablist" aria-label="Upload or track">
+      <span class="seg-thumb" aria-hidden="true"></span>
+      <button type="button" role="tab" id="tabUpload" class="active" aria-selected="true" aria-controls="paneUpload">
+        <svg class="ic ic-sm" aria-hidden="true"><use href="#i-camera" /></svg><span data-i18n="req_heading">Upload Prescription</span>
+      </button>
+      <button type="button" role="tab" id="tabTrack" aria-selected="false" aria-controls="paneTrack">
+        <svg class="ic ic-sm" aria-hidden="true"><use href="#i-track" /></svg><span data-i18n="track_heading">Track My Order</span>
+      </button>
+    </div>
+
+    <div class="panes">
+      <!-- Prescription upload -->
+      <div class="card pane" id="paneUpload" role="tabpanel" aria-labelledby="tabUpload" data-reveal>
+        <h3 data-i18n="req_heading">Upload Prescription</h3>
+        <p class="hint" data-i18n="req_sub">Make sure your prescription clearly shows the following:</p>
+        <ul class="req-list">
+          <li><span class="dot c1" aria-hidden="true">🧑‍⚕️</span><span data-i18n="req_doctor">Doctor Details</span></li>
+          <li><span class="dot c2" aria-hidden="true">📅</span><span data-i18n="req_date">Date of Prescription</span></li>
+          <li><span class="dot c3" aria-hidden="true">🙋</span><span data-i18n="req_patient">Patient Details</span></li>
+          <li><span class="dot c4" aria-hidden="true">💊</span><span data-i18n="req_medicine">Medicine Details</span></li>
+        </ul>
+        <div class="sample-toggle-row">
+          <span class="chip violet">8MB <span data-i18n="req_max">max</span></span>
+          <button type="button" class="link-btn" id="sampleToggle" aria-expanded="false" aria-controls="sample" data-i18n="req_view_sample">View sample</button>
+        </div>
+        <div class="sample" id="sample">
+          <div class="sample-card">
+            <div class="sample-line"><span data-i18n="sample_doctor">Doctor</span><span>Dr. A. Sharma, MBBS</span></div>
+            <div class="sample-line"><span data-i18n="sample_date">Date</span><span>28 Aug 2026</span></div>
+            <div class="sample-line"><span data-i18n="sample_patient">Patient</span><span data-i18n="sample_patient_val">Full name &amp; age</span></div>
+            <div class="sample-line"><span>Rx</span><span data-i18n="sample_rx_val">Medicine name, dosage &amp; duration</span></div>
+          </div>
+        </div>
+
+        <form id="rxForm" name="prescription" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="prescription" />
+          <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <input type="file" id="rxFile" name="prescription" accept="image/*,.pdf" hidden />
+
+          <div class="upload-actions">
+            <button type="button" class="btn btn-primary" id="cameraBtn"><svg class="ic" aria-hidden="true"><use href="#i-camera" /></svg><span data-i18n="upload_camera">Take a Photo</span></button>
+            <button type="button" class="btn btn-outline" id="galleryBtn"><svg class="ic" aria-hidden="true"><use href="#i-image" /></svg><span data-i18n="upload_gallery">Choose from Gallery</span></button>
+          </div>
+
+          <div class="file-preview" id="filePreview">
+            <img id="fpImg" alt="" hidden />
+            <div class="fp-icon" id="fpIcon" hidden><svg class="ic" aria-hidden="true"><use href="#i-file" /></svg></div>
+            <div class="fp-meta"><div class="fp-name" id="fpName"></div><div class="fp-size" id="fpSize"></div></div>
+            <button type="button" class="fp-remove" id="fpRemove" aria-label="Remove file"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-close" /></svg></button>
+          </div>
+
+          <div class="rx-details" id="rxDetails" hidden>
+            <p class="rx-details-title" data-i18n="upload_details">Your details</p>
+            <div class="field"><label for="rxName" data-i18n="full_name_label">Full Name</label><input class="field-input" type="text" id="rxName" name="name" autocomplete="name" required /></div>
+            <div class="field"><label for="rxPhone" data-i18n="mobile_label">Mobile Number</label><input class="field-input" type="tel" id="rxPhone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" minlength="10" maxlength="16" required /></div>
+            <div class="field"><label for="rxNotes" data-i18n="upload_notes">Anything we should know? (optional)</label><input class="field-input" type="text" id="rxNotes" name="notes" /></div>
+            <button type="submit" class="btn btn-primary btn-block"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-send" /></svg><span data-i18n="upload_submit">Send Prescription</span></button>
+          </div>
+        </form>
+        <div class="notice" id="uploadNotice" role="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Order tracking -->
+      <div class="card pane is-hidden" id="paneTrack" role="tabpanel" aria-labelledby="tabTrack" data-reveal>
+        <h3 data-i18n="track_heading">Track My Order</h3>
+        <p class="hint" data-i18n="track_hint">Enter the order ID sent to you on WhatsApp or SMS.</p>
+        <form class="track-form" id="trackForm">
+          <label for="trackInput" class="sr-only">Order ID</label>
+          <input class="field-input" type="text" id="trackInput" placeholder="AP-10234" autocomplete="off" autocapitalize="characters" required />
+          <button type="submit" class="btn btn-primary" data-i18n="track_btn">Track</button>
+        </form>
+        <!-- feature:demoTracking -->
+        <div class="track-result" id="trackResult" aria-live="polite">
+          <p class="track-title"><span data-i18n="track_showing">Live status for order</span> <strong id="trackId"></strong></p>
+          <div class="stepper">
+            <div class="stepper-fill" id="stepperFill"></div>
+            <div class="step"><div class="step-dot"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div><div class="step-label" data-i18n="step_confirmed">Confirmed</div></div>
+            <div class="step"><div class="step-dot"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div><div class="step-label" data-i18n="step_packed">Packed</div></div>
+            <div class="step"><div class="step-dot"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div><div class="step-label" data-i18n="step_outfordelivery">Out for<br />Delivery</div></div>
+            <div class="step"><div class="step-dot"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div><div class="step-label" data-i18n="step_delivered">Delivered</div></div>
+          </div>
+          <p class="eta" id="trackEta"></p>
+        </div>
+        <!-- /feature:demoTracking -->
+        <p class="track-note"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-wa" /></svg><span data-i18n="track_wa_hint">We'll share the live status on WhatsApp.</span></p>
+      </div>
+    </div>
+  </div>
+</section>

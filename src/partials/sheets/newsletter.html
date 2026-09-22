@@ -1,0 +1,38 @@
+<div class="sheet-backdrop" data-sheet="newsletter">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Newsletter offer">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <button type="button" class="sheet-close" data-close aria-label="Close"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-close" /></svg></button>
+
+    <div class="step-view active nl" data-step="form">
+      <div class="nl-badge" aria-hidden="true"><span>50%<small>OFF</small></span></div>
+      <h2 class="sheet-title" data-i18n="nl_heading">Flat 50% off your first order</h2>
+      <p class="sub" data-i18n="nl_sub_short">On medicines and diagnostic tests both — plus health tips and refill reminders for your family.</p>
+      <ul class="nl-benefits">
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg><span data-i18n="nl_b1">Flat 50% off your first order — medicines and lab tests both</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg><span data-i18n="nl_b2">Health, diet &amp; fitness tips from our team, straight to your inbox</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg><span data-i18n="nl_b3">Medicine and test reminders, sent before you ever run out</span></li>
+        <li><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg><span data-i18n="nl_b4">First access to every new service, before anyone else hears of it</span></li>
+      </ul>
+      <form id="nlForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter" />
+        <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <label for="nlEmail" class="sr-only">Email</label>
+        <input class="field-input" type="email" id="nlEmail" name="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required />
+        <button type="submit" class="btn btn-amber btn-block" data-i18n="nl_submit">Subscribe &amp; Claim 50% Off</button>
+      </form>
+      <div class="notice" id="nlNotice" role="status" aria-live="polite"></div>
+      <button type="button" class="link-btn" data-close data-i18n="nl_skip">Maybe later</button>
+      <p class="fine" data-i18n="nl_fineprint">By subscribing, you agree to receive occasional emails from Putul Medical. Unsubscribe anytime.</p>
+    </div>
+
+    <div class="step-view nl" data-step="done">
+      <div class="success">
+        <div class="check"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div>
+        <h2 data-i18n="nl_success_h">You're on the list!</h2>
+        <p class="sub" data-i18n="nl_success_sub">Use this code at checkout for 50% off your first order — medicine or test.</p>
+        <div class="promo-code">WELCOME50</div>
+        <button type="button" class="btn btn-primary btn-block" data-close data-i18n="nl_continue">Continue Browsing</button>
+      </div>
+    </div>
+  </div>
+</div>

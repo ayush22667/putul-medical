@@ -1,0 +1,36 @@
+<div class="sheet-backdrop" data-sheet="lab">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Book a home test">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <button type="button" class="sheet-close" data-close aria-label="Close"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-close" /></svg></button>
+
+    <div class="step-view active" data-step="form">
+      <h2 class="sheet-title" data-i18n="diag_book_h">Book your test</h2>
+      <div class="preview-row">
+        <div class="avatar avatar-red" aria-hidden="true">🩸</div>
+        <div><b id="labTest"></b><small class="text-red" data-i18n="diag_home_collection">Home sample collection</small></div>
+      </div>
+      <form id="labForm" name="lab-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="lab-booking" />
+        <input type="hidden" name="test" id="labTestField" />
+        <input type="hidden" name="code" id="labCodeField" />
+        <p hidden><label>Leave empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+        <div class="field"><label for="labName" data-i18n="full_name_label">Full Name</label><input class="field-input" type="text" id="labName" name="name" autocomplete="name" required /></div>
+        <div class="field"><label for="labPhone" data-i18n="mobile_label">Mobile Number</label><input class="field-input" type="tel" id="labPhone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" minlength="10" maxlength="16" required /></div>
+        <div class="field"><label for="labAddress" data-i18n="diag_address_label">Home Address</label><input class="field-input" type="text" id="labAddress" name="address" autocomplete="street-address" required /></div>
+        <div class="field"><label for="labTime" data-i18n="doc_preferred_time">Preferred Time</label><input class="field-input" type="datetime-local" id="labTime" name="preferred_time" required /></div>
+        <button type="submit" class="btn btn-red btn-block" data-i18n="diag_confirm_btn">Confirm Booking</button>
+      </form>
+    </div>
+
+    <div class="step-view" data-step="done">
+      <div class="success">
+        <div class="check check-red"><svg class="ic" aria-hidden="true"><use href="#i-check" /></svg></div>
+        <h2 class="result-title" data-i18n="diag_confirmed_h">Booking request received</h2>
+        <p class="sub result-sub" data-i18n="diag_confirmed_sub">Our technician will arrive at your scheduled time. We'll confirm on WhatsApp shortly.</p>
+        <div class="promo-code promo-red" id="labCode">LAB15</div>
+        <a href="#" target="_blank" rel="noopener" class="btn btn-wa btn-block result-wa" id="labWa"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-wa" /></svg><span class="result-wa-label" data-i18n="wa_faster">Get a faster reply on WhatsApp</span></a>
+        <button type="button" class="btn btn-ghost btn-block" data-close data-i18n="continue_btn">Continue</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <include src="src/partials/head.html"></include>
+    <meta name="robots" content="noindex" />
+    <title>Page not found — Putul Medical</title>
+  </head>
+  <body class="not-found">
+    <include src="src/partials/icons.html"></include>
+    <main class="nf">
+      <svg class="ic nf-icon" aria-hidden="true"><use href="#i-shield" /></svg>
+      <p class="eyebrow">404</p>
+      <h1>This page isn't on our shelf.</h1>
+      <p>यह पेज उपलब्ध नहीं है। The link may be old or mistyped.</p>
+      <div class="nf-actions">
+        <a class="btn btn-primary" href="/">Go to homepage · होम पेज</a>
+        <a class="btn btn-wa" href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener">
+          <svg class="ic ic-sm" aria-hidden="true"><use href="#i-wa" /></svg>WhatsApp
+        </a>
+      </div>
+    </main>
+    <script type="module" src="/src/not-found.js"></script>
+  </body>
+</html>

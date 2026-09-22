@@ -1,0 +1,25 @@
+{
+  "name": "putul-medical",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Putul Medical — pharmacy, doctor bookings and home diagnostics for Katihar & Purnea.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "check": "npm run lint && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.11.0",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.8",
+    "vite": "^8.3.0"
+  }
+}

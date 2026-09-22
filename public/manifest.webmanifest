@@ -1,0 +1,14 @@
+{
+  "name": "Putul Medical",
+  "short_name": "Putul Medical",
+  "description": "Genuine medicines, doctor bookings and home blood tests in Katihar & Purnea.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F4F1E6",
+  "theme_color": "#152A1D",
+  "lang": "en-IN",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

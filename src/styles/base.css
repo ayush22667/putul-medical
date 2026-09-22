@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: calc(var(--bottom-nav-h) + var(--safe-b));
+  overflow-x: hidden;
+}
+body.locked {
+  overflow: hidden;
+}
+html[lang='hi'] body {
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--pine-dark);
+}
+html[lang='hi'] :is(h1, h2, h3) {
+  font-family: var(--font-deva);
+  letter-spacing: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+img,
+svg {
+  display: block;
+}
+input,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.ic {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.ic-sm {
+  width: 18px;
+  height: 18px;
+}
+.ic-lg {
+  width: 28px;
+  height: 28px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 300;
+  background: var(--amber);
+  color: var(--pine-dark);
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 10px;
+  transform: translateY(-150%);
+  transition: transform 0.2s;
+}
+.skip-link:focus {
+  transform: none;
+}
+
+.text-red {
+  color: var(--red-dark) !important;
+}

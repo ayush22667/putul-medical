@@ -1,0 +1,23 @@
+<div class="sheet-backdrop" data-sheet="menu">
+  <div class="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="sheet-handle" aria-hidden="true"></div>
+    <button type="button" class="sheet-close" data-close aria-label="Close"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-close" /></svg></button>
+    <h2 class="sheet-title">{{name}}</h2>
+    <ul class="menu-list">
+      <li><a href="#order" data-close><span class="ic-box t-pine"><svg class="ic" aria-hidden="true"><use href="#i-grid" /></svg></span><span data-i18n="nav_order">Order Medicine</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></a></li>
+      <li><a href="#consultation" data-close><span class="ic-box t-amber"><svg class="ic" aria-hidden="true"><use href="#i-steth" /></svg></span><span data-i18n="nav_doctors">Doctors</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></a></li>
+      <li><a href="#diagnostics" data-close><span class="ic-box t-red"><svg class="ic" aria-hidden="true"><use href="#i-drop" /></svg></span><span data-i18n="nav_diagnostics">Diagnostics</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></a></li>
+      <li><a href="#upload" data-close><span class="ic-box t-pine"><svg class="ic" aria-hidden="true"><use href="#i-camera" /></svg></span><span data-i18n="hero_cta2">Upload Prescription</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></a></li>
+      <li><a href="#services" data-close><span class="ic-box t-amber"><svg class="ic" aria-hidden="true"><use href="#i-pill" /></svg></span><span data-i18n="nav_services">Services</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></a></li>
+      <li><a href="#about" data-close><span class="ic-box t-pine"><svg class="ic" aria-hidden="true"><use href="#i-shield" /></svg></span><span data-i18n="nav_about">About</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></a></li>
+      <li><button type="button" data-open="story"><span class="ic-box t-amber"><svg class="ic" aria-hidden="true"><use href="#i-book" /></svg></span><span data-i18n="nav_story">Our Story</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></button></li>
+      <!-- feature:signin -->
+      <li><button type="button" data-open="signin"><span class="ic-box t-pine"><svg class="ic" aria-hidden="true"><use href="#i-user" /></svg></span><span data-i18n="signin_label">Sign In</span><svg class="ic chev" aria-hidden="true"><use href="#i-chev" /></svg></button></li>
+      <!-- /feature:signin -->
+    </ul>
+    <div class="menu-contact">
+      <a href="tel:{{phoneE164}}" class="btn btn-outline"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-phone" /></svg><span data-i18n="call_short">Call</span></a>
+      <a href="https://wa.me/{{whatsapp}}" target="_blank" rel="noopener" class="btn btn-wa"><svg class="ic ic-sm" aria-hidden="true"><use href="#i-wa" /></svg>WhatsApp</a>
+    </div>
+  </div>
+</div>
